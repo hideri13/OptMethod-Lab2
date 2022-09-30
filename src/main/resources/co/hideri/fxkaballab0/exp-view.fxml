@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="322.0" prefWidth="460.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="co.hideri.kaballab0fx.ExpController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <LineChart fx:id="expChart" createSymbols="false" title="ГРАФИК">
+        <xAxis>
+          <NumberAxis side="BOTTOM" fx:id="botAx" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" fx:id="leftAx"/>
+        </yAxis>
+      </LineChart>
+      <TextArea fx:id="expText" prefHeight="200.0" prefWidth="200.0" editable="false"/>
+   </children>
+</VBox>
