@@ -22,10 +22,11 @@ public class Exp {
                 .average().orElse(0);
     }
     private List<Double> lnArr(double[] arr) {
+        List<Double> list = new ArrayList<>();
         for (double e : arr) {
-            Exp.this.z.add(Math.log(e));
+            list.add(Math.log(e));
         }
-        return Exp.this.z;
+        return list;
     }
     private Double FI(double x) {
         NormalDistribution distribution = new NormalDistribution();
@@ -166,7 +167,9 @@ public class Exp {
         ChiSquare chi = new ChiSquare();
         Pair<Double, Double> Kp = chi.chiSquareTest(listToprimitiveDouble(nSt), listToprimitiveLong(obs), 1);
         System.out.println("K: " + Kp.getFirst() + "\np: " + Kp.getSecond());
-        return "";
+
+
+        return "K: " + Kp.getFirst() + "\np: " + Kp.getSecond();
     }
     public List<Double> CountY(double[] data, int t) {
         z = lnArr(data);
@@ -186,6 +189,7 @@ public class Exp {
             zt.add(z.get(i - 1) * i);
             tq.add(Math.pow(i,2));
         }
+        System.out.println("tq: " + tq);
         Double ztAvg = getAverage(zt);
         Double tqAvg = getAverage(tq);
         System.out.println("zAvg: " + zAvg);

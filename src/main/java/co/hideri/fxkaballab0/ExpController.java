@@ -20,25 +20,15 @@ public class ExpController {
     }
 
     private void visualize() {
-        /*
-        this.flipsChart.getData().clear();
-        XYChart.Series<Number, Number> series = new XYChart.Series<>();
-        series.setName("Flips");
-        int i = 0;
-        for (String element : flipRes) {
-            series.getData().add(new XYChart.Data(i, element));
-            i += 1;
-        }
-        flipsChart.getData().add(series);
-        //System.out.println(flipsChart.getData().get(0).getData());
-
-         */
-        //this.expChart.getData().clear();
 
         double[] dataHideri = {12038, 16787, 19887, 23899, 27644, 30806, 34400, 37131, 40162, 42771, 44814, 45232, 60384, 66912, 69055, 71238, 73273, 75155, 75655, 76216, 76846, 78608, 78990, 79558, 80412, 81384, 82728, 84152, 86023};
         Exp exp = new Exp();
+        String fieldText = "";
+
         List<Double> Y = exp.CountY(dataHideri, dataHideri.length);
-        exp.CheckHyp(dataHideri.length);
+        fieldText = exp.CheckHyp(dataHideri.length);
+        expText.setText(fieldText);
+
         XYChart.Series<Number, Number> series = new XYChart.Series<>();
         series.setName("Исходные данные");
         int i = 0;
