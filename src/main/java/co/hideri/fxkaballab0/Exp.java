@@ -192,9 +192,8 @@ public class Exp {
         System.out.println("ztAvg: " + ztAvg);
         System.out.println("tqAvg: " + tqAvg);
         System.out.println("tAvg: " + tAvg);
+
         b = (ztAvg - (zAvg * tAvg)) / (tqAvg - Math.pow(tAvg, 2));
-        System.out.println("Chis: " + (ztAvg - (zAvg * tAvg)));
-        System.out.println("Znam: " + (tqAvg - Math.pow(tAvg, 2)));
         a = (zAvg - (b * tAvg));
         Double A = Math.exp(a);
         //System.out.println("A=" + A + " b=" + b + " a=" + a + " ztAvg=" + ztAvg + " zAvg=" + zAvg + " tAvg=" + tAvg + " tqAvg=" + tqAvg);
