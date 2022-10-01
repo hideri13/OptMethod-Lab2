@@ -1,4 +1,4 @@
-package co.hideri.kaballab0fx;
+package co.hideri.fxkaballab0;
 
 import org.apache.commons.math3.distribution.ChiSquaredDistribution;
 import org.apache.commons.math3.exception.DimensionMismatchException;

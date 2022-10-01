@@ -1,4 +1,4 @@
-package co.hideri.kaballab0fx;
+package co.hideri.fxkaballab0;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
