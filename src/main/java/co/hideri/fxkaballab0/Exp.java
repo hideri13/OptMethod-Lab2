@@ -79,6 +79,7 @@ public class Exp {
         Double sigma = Math.sqrt(disper);
 
         int lg = log2(t);
+        System.out.println("lg: " + lg);
         Double minList = e.get(e.indexOf(Collections.min(e)));
         Double maxList = e.get(e.indexOf(Collections.max(e)));
         Double deltaList = maxList - minList;
@@ -103,7 +104,7 @@ public class Exp {
             } else if (e.get(i) >= intervals.get(intervals.size() - 1)) {
                 obs.set(obs.size() - 1, obs.get(obs.size() - 1) + 1);
             } else {
-                for ( int j = 1; j <= intervals.size() - 1; j++) {
+                for ( int j = 1; j < intervals.size(); j++) {
                     if(e.get(i) < intervals.get(j)) {
                         obs.set(j, obs.get(j) + 1);
                         break;
