@@ -11,7 +11,7 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
-      <LineChart fx:id="expChart" createSymbols="false" title="График заболевших Covid-19 за Май - Июль 2022г">
+      <LineChart fx:id="expChart" createSymbols="false" title="График заболевших Covid-19">
         <xAxis>
           <NumberAxis side="BOTTOM" fx:id="botAx" />
         </xAxis>

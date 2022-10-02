@@ -9,10 +9,10 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class ExpApp extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
+
+    @Override public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ExpApp.class.getResource("exp-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
         String css = Objects.requireNonNull(this.getClass().getResource("App.css")).toExternalForm();
         scene.getStylesheets().add(css);
         stage.setTitle("EXP");
