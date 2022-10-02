@@ -169,8 +169,8 @@ public class Exp {
         Pair<Double, Double> Kp = chi.chiSquareTest(listToprimitiveDouble(nSt), listToprimitiveLong(obs), 1);
         System.out.println("K: " + Kp.getFirst() + "\np: " + Kp.getSecond());
         String out = "K: " + Kp.getFirst() + "\np: " + Kp.getSecond() + '\n';
-        if (Kp.getSecond() < 0.05) {
-            out += "p < 0.05. Критерий не верен!";
+        if (Kp.getSecond() <= 0.05) {
+            out += "p <= 0.05. Критерий не верен!";
         } else {
             out += "p > 0.05. Гипотеза верна!";
         }
