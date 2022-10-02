@@ -58,12 +58,12 @@ public class Exp {
     public String CheckHyp(int t) {
         List<Double> zStar = new ArrayList<>();
         List<Double> e = new ArrayList<>();
-        System.out.println("b: " + b);
-        System.out.println("a: " + a);
         for (int i = 1; i <= t; i++) {
             zStar.add(b*i+a);
             e.add(z.get(i-1) - zStar.get(i-1));
         }
+        System.out.println("b: " + b);
+        System.out.println("a: " + a);
         System.out.println("zStar: " + zStar);
         System.out.println("e: " + e);
 
@@ -73,7 +73,6 @@ public class Exp {
         }
 
         Double eqAvg = getAverage(eq);
-
         Double eAvg = getAverage(e);
         Double disper = eqAvg - Math.pow(eAvg, 2);
         Double sigma = Math.sqrt(disper);
@@ -97,7 +96,6 @@ public class Exp {
         for (int i = 0; i <= intervals.size(); i++) {
             obs.add(0L);
         }
-
         for (int i = 0; i <= e.size() - 1; i++) {
             if (e.get(i) < intervals.get(0)) {
                 obs.set(0, obs.get(0) + 1);
@@ -148,6 +146,7 @@ public class Exp {
         }
         P.add(0.5 - FI(intervals.get(intervals.size() - 1)/sigma));
         System.out.println("P: " + P);
+
         Double Psum = 0.0;
         for (int i = 0; i < P.size(); i++) {
             Psum += P.get(i);
@@ -159,6 +158,7 @@ public class Exp {
             nSt.add(t * el);
         }
         System.out.println("nSt: " + nSt);
+
         Double nStsum = 0.0;
         for (int i = 0; i < nSt.size(); i++) {
             nStsum += nSt.get(i);
@@ -183,12 +183,9 @@ public class Exp {
         System.out.println("Z: " + z);
 
         Double zAvg = getAverage(z);
-        //System.out.println(zMid);
-
 
         Double tSum = (double) ((t * (t + 1)) / 2);
         Double tAvg = tSum / t;
-        //System.out.println(tAvg);
 
         List<Double> zt = new ArrayList<>();
         List<Double> tq = new ArrayList<>();
@@ -196,9 +193,10 @@ public class Exp {
             zt.add(z.get(i - 1) * i);
             tq.add(Math.pow(i,2));
         }
-        System.out.println("tq: " + tq);
         Double ztAvg = getAverage(zt);
         Double tqAvg = getAverage(tq);
+
+        System.out.println("tq: " + tq);
         System.out.println("zAvg: " + zAvg);
         System.out.println("ztAvg: " + ztAvg);
         System.out.println("tqAvg: " + tqAvg);
@@ -207,7 +205,6 @@ public class Exp {
         b = (ztAvg - (zAvg * tAvg)) / (tqAvg - Math.pow(tAvg, 2));
         a = (zAvg - (b * tAvg));
         Double A = Math.exp(a);
-        //System.out.println("A=" + A + " b=" + b + " a=" + a + " ztAvg=" + ztAvg + " zAvg=" + zAvg + " tAvg=" + tAvg + " tqAvg=" + tqAvg);
 
         List<Double> yList = new ArrayList<>();
         for (int i = 1; i <= t; i++) {
