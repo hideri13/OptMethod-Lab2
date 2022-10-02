@@ -13,10 +13,10 @@
    <children>
       <LineChart fx:id="expChart" createSymbols="false" title="График заболевших Covid-19">
         <xAxis>
-          <NumberAxis side="BOTTOM" fx:id="botAx" autoRanging="true" forceZeroInRange="false" label="Дни"/>
+          <NumberAxis side="BOTTOM" fx:id="botAx" autoRanging="true" forceZeroInRange="false" label="День"/>
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" fx:id="leftAx" autoRanging="true" forceZeroInRange="false" label="Количетво заражений"/>
+          <NumberAxis side="LEFT" fx:id="leftAx" autoRanging="true" forceZeroInRange="false" label="Cлучаи заражения"/>
         </yAxis>
       </LineChart>
       <TextArea fx:id="expText" prefHeight="200.0" prefWidth="200.0" editable="false"/>
