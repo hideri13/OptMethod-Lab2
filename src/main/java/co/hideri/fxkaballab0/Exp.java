@@ -10,8 +10,6 @@ import org.apache.commons.math3.util.Pair;
 import static javafx.scene.input.KeyCode.T;
 
 public class Exp {
-//    static double[] dataHideri = {12038, 16787, 19887, 23899, 27644, 30806, 34400, 37131, 40162, 42771, 44814, 45232, 60384, 66912, 69055, 71238, 73273, 75155, 75655, 76216, 76846, 78608, 78990, 79558, 80412, 81384, 82728, 84152, 86023};
-    //int[] dataIlya = { };
     public List<Double> z = new ArrayList<>();
     public Double b = 0.0;
     public Double a = 0.0;
@@ -181,20 +179,19 @@ public class Exp {
         return out;
     }
 
-    // функция вычисления значений экспаненциальной функции,
+    // функция вычисления значений экспоненциальной функции,
     // где data - исходные данные, t - количество данных
     public List<Double> CountY(double[] data, int t) {
         z = lnArr(data); // массив натуальных логарифмов элементов data
         System.out.println("Z: " + z);
 
         Double zAvg = getAverage(z); // среднее арифметическое z
-
         Double tSum = (double) ((t * (t + 1)) / 2);
         Double tAvg = tSum / t; // среднее арифметическое t
 
         List<Double> zt = new ArrayList<>(); // массив произведений z и t
         List<Double> tq = new ArrayList<>(); // массив кваратов t
-        for (int i = 1; i <= t; i++) { // вычисление значений элементов массивов
+        for (int i = 1; i <= t; i++) { // вычисление значений элементов массивов tq и zt
             zt.add(z.get(i - 1) * i);
             tq.add(Math.pow(i,2));
         }
@@ -211,14 +208,6 @@ public class Exp {
             yList.add(A * Math.exp(b*i));
         }
 
-        System.out.println("tq: " + tq);
-        System.out.println("zAvg: " + zAvg);
-        System.out.println("tAvg: " + tAvg);
-        System.out.println("zt: " + zt);
-        System.out.println("tq: " + tq);
-        System.out.println("ztAvg: " + ztAvg);
-        System.out.println("tqAvg: " + tqAvg);
-        System.out.println("tAvg: " + tAvg);
         System.out.println("b: " + b);
         System.out.println("a: " + a);
         System.out.println("A: " + A);
