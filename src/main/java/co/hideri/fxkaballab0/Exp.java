@@ -7,6 +7,8 @@ import java.util.List;
 import org.apache.commons.math3.distribution.NormalDistribution;
 import org.apache.commons.math3.util.Pair;
 
+import static javafx.scene.input.KeyCode.T;
+
 public class Exp {
 //    static double[] dataHideri = {12038, 16787, 19887, 23899, 27644, 30806, 34400, 37131, 40162, 42771, 44814, 45232, 60384, 66912, 69055, 71238, 73273, 75155, 75655, 76216, 76846, 78608, 78990, 79558, 80412, 81384, 82728, 84152, 86023};
     //int[] dataIlya = { };
@@ -55,6 +57,7 @@ public class Exp {
         }
         return true;
     }
+
     public String CheckHyp(int t) {
         List<Double> zStar = new ArrayList<>();
         List<Double> e = new ArrayList<>();
@@ -76,6 +79,7 @@ public class Exp {
         Double eAvg = getAverage(e);
         Double disper = eqAvg - Math.pow(eAvg, 2);
         Double sigma = Math.sqrt(disper);
+        System.out.println("Sigma: " + sigma);
 
         int lg = log2(t);
         System.out.println("lg: " + lg);
