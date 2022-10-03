@@ -55,7 +55,7 @@ public class Exp {
     }
 
     public String CheckHyp(int t) {
-        List<Double> zStar = new ArrayList<>();
+        List<Double> zStar = new ArrayList<>(); // z*
         List<Double> e = new ArrayList<>();
         for (int i = 1; i <= t; i++) {
             zStar.add(b*i+a);
