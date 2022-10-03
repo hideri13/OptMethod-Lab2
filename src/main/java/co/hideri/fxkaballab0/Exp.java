@@ -65,8 +65,6 @@ public class Exp {
             zStar.add(b*i+a);
             e.add(z.get(i-1) - zStar.get(i-1));
         }
-        System.out.println("b: " + b);
-        System.out.println("a: " + a);
         System.out.println("zStar: " + zStar);
         System.out.println("e: " + e);
 
@@ -81,7 +79,7 @@ public class Exp {
         Double sigma = Math.sqrt(disper);
         System.out.println("Sigma: " + sigma);
 
-        int lg = log2(t);
+        int lg = log2(t) + 1;
         System.out.println("lg: " + lg);
         Double minList = e.get(e.indexOf(Collections.min(e)));
         Double maxList = e.get(e.indexOf(Collections.max(e)));
@@ -90,7 +88,7 @@ public class Exp {
         Double step = deltaList / lg;
         List<Double> intervals = new ArrayList<>();
         Double tmplist = minList;
-        for (int i = 0; i < lg; i++) {
+        for (int i = 0; i < lg - 1; i++) {
             tmplist = tmplist + step;
             intervals.add(tmplist);
         }
@@ -182,38 +180,49 @@ public class Exp {
 
         return out;
     }
+
+    // функция вычисления значений экспаненциальной функции,
+    // где data - исходные данные, t - количество данных
     public List<Double> CountY(double[] data, int t) {
-        z = lnArr(data);
+        z = lnArr(data); // массив натуальных логарифмов элементов data
         System.out.println("Z: " + z);
 
-        Double zAvg = getAverage(z);
+        Double zAvg = getAverage(z); // среднее арифметическое z
 
         Double tSum = (double) ((t * (t + 1)) / 2);
-        Double tAvg = tSum / t;
+        Double tAvg = tSum / t; // среднее арифметическое t
 
-        List<Double> zt = new ArrayList<>();
-        List<Double> tq = new ArrayList<>();
-        for (int i = 1; i <= t; i++) {
+        List<Double> zt = new ArrayList<>(); // массив произведений z и t
+        List<Double> tq = new ArrayList<>(); // массив кваратов t
+        for (int i = 1; i <= t; i++) { // вычисление значений элементов массивов
             zt.add(z.get(i - 1) * i);
             tq.add(Math.pow(i,2));
         }
-        Double ztAvg = getAverage(zt);
-        Double tqAvg = getAverage(tq);
 
-        System.out.println("tq: " + tq);
-        System.out.println("zAvg: " + zAvg);
-        System.out.println("ztAvg: " + ztAvg);
-        System.out.println("tqAvg: " + tqAvg);
-        System.out.println("tAvg: " + tAvg);
+        Double ztAvg = getAverage(zt); // среднее арифметическое zt
+        Double tqAvg = getAverage(tq); // среднее арифместическое tq
 
-        b = (ztAvg - (zAvg * tAvg)) / (tqAvg - Math.pow(tAvg, 2));
-        a = (zAvg - (b * tAvg));
-        Double A = Math.exp(a);
+        b = (ztAvg - (zAvg * tAvg)) / (tqAvg - Math.pow(tAvg, 2)); // вычисление параметра b
+        a = (zAvg - (b * tAvg)); // вычисление параметра a
+        Double A = Math.exp(a); // вычисление А
 
-        List<Double> yList = new ArrayList<>();
+        List<Double> yList = new ArrayList<>(); // вычисление Y
         for (int i = 1; i <= t; i++) {
             yList.add(A * Math.exp(b*i));
         }
+
+        System.out.println("tq: " + tq);
+        System.out.println("zAvg: " + zAvg);
+        System.out.println("tAvg: " + tAvg);
+        System.out.println("zt: " + zt);
+        System.out.println("tq: " + tq);
+        System.out.println("ztAvg: " + ztAvg);
+        System.out.println("tqAvg: " + tqAvg);
+        System.out.println("tAvg: " + tAvg);
+        System.out.println("b: " + b);
+        System.out.println("a: " + a);
+        System.out.println("A: " + A);
+
         return yList;
     }
 }
