@@ -141,7 +141,7 @@ public class Exp {
             }
         }
         System.out.println("OBS Valid: " + obs);
-        System.out.println("Intervals Valid" + intervals);
+        System.out.println("Intervals Valid: " + intervals);
 
         List<Double> P = new ArrayList<>();
         P.add(FI(intervals.get(0) / sigma) + 0.5);
