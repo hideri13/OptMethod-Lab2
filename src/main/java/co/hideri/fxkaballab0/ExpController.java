@@ -141,7 +141,5 @@ public class ExpController {
             j += 1;
         }
         expChart.getData().add(series2);
-
-
     }
 }
