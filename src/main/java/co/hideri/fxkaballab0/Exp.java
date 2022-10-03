@@ -7,8 +7,6 @@ import java.util.List;
 import org.apache.commons.math3.distribution.NormalDistribution;
 import org.apache.commons.math3.util.Pair;
 
-import static javafx.scene.input.KeyCode.T;
-
 public class Exp {
     public List<Double> z = new ArrayList<>();
     public Double b = 0.0;
@@ -182,7 +180,7 @@ public class Exp {
     // функция вычисления значений экспоненциальной функции,
     // где data - исходные данные, t - количество данных
     public List<Double> CountY(double[] data, int t) {
-        z = lnArr(data); // массив натуальных логарифмов элементов data
+        z = lnArr(data); // массив натуральных логарифмов элементов data
         System.out.println("Z: " + z);
 
         Double zAvg = getAverage(z); // среднее арифметическое z
@@ -190,14 +188,14 @@ public class Exp {
         Double tAvg = tSum / t; // среднее арифметическое t
 
         List<Double> zt = new ArrayList<>(); // массив произведений z и t
-        List<Double> tq = new ArrayList<>(); // массив кваратов t
+        List<Double> tq = new ArrayList<>(); // массив квадратов t
         for (int i = 1; i <= t; i++) { // вычисление значений элементов массивов tq и zt
             zt.add(z.get(i - 1) * i);
             tq.add(Math.pow(i,2));
         }
 
         Double ztAvg = getAverage(zt); // среднее арифметическое zt
-        Double tqAvg = getAverage(tq); // среднее арифместическое tq
+        Double tqAvg = getAverage(tq); // среднее арифметическое tq
 
         b = (ztAvg - (zAvg * tAvg)) / (tqAvg - Math.pow(tAvg, 2)); // вычисление параметра b
         a = (zAvg - (b * tAvg)); // вычисление параметра a
