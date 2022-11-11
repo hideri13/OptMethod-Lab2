@@ -23,8 +23,6 @@ public class Grad {
         List<Double> error = new ArrayList<>();
         List<Double> XEmult = new ArrayList<>();
 
-        System.out.println("a_c: " + a);
-        System.out.println("b_c: " + b);
         // Основной цикл
         for (int i = 0; i < stepCount; i++) {
             /* Расчитываем результрующий массив с текущими коэф a и b
@@ -53,7 +51,7 @@ public class Grad {
             XEmult.clear();
         }
 
-        System.out.println("a_c_end: " + a);
-        System.out.println("b_c_end: " + b);
+        System.out.println("a_gr: " + a);
+        System.out.println("b_gr: " + b);
     }
 }

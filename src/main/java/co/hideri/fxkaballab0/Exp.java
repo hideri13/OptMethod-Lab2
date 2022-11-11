@@ -206,9 +206,9 @@ public class Exp {
             yList.add(A * Math.exp(b*i));
         }
 
-        System.out.println("b: " + b);
-        System.out.println("a: " + a);
-        System.out.println("A: " + A);
+        System.out.println("a_id: " + a);
+        System.out.println("b_id: " + b);
+        //System.out.println("A: " + A);
 
         return yList;
     }
