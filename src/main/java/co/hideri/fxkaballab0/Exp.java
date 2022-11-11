@@ -14,7 +14,7 @@ public class Exp {
     private int log2(int N) {
         return (int)(Math.log(N) / Math.log(2));
     }
-    private double getAverage(List<Double> list) {
+    public static double getAverage(List<Double> list) {
         return list.stream()
                 .mapToDouble(a -> a)
                 .average().orElse(0);
@@ -181,7 +181,7 @@ public class Exp {
     // где data - исходные данные, t - количество данных
     public List<Double> CountY(double[] data, int t) {
         z = lnArr(data); // массив натуральных логарифмов элементов data
-        System.out.println("Z: " + z);
+        System.out.println("Z: " + z + "\nz_size: " + z.size());
 
         Double zAvg = getAverage(z); // среднее арифметическое z
         Double tSum = (double) ((t * (t + 1)) / 2);

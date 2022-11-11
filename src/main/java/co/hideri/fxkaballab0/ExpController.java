@@ -11,8 +11,11 @@ import java.util.List;
 import java.util.Locale;
 
 public class ExpController {
+    //@FXML private LineChart<String, Number> gradChart;
     @FXML private CategoryAxis botAx;
     @FXML private NumberAxis leftAx;
+    //@FXML private CategoryAxis botAx1;
+    //@FXML private NumberAxis leftAx1;
     @FXML private LineChart<String, Number>  expChart;
 
     @FXML private TextArea expText;
@@ -33,8 +36,9 @@ public class ExpController {
         String fieldText = "";
 
         List<Double> Y = exp.CountY(dataHideri, dataHideri.length);
-        fieldText = exp.CheckHyp(dataHideri.length);
-        expText.setText(fieldText);
+        //fieldText = exp.CheckHyp(dataHideri.length);
+        //expText.setText(fieldText);
+        Grad.coefCount(exp.z);
 
         XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setName("Исходные данные");
